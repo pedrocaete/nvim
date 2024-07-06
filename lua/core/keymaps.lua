@@ -61,7 +61,8 @@ keymap.set("n", "<C-g>c", ":Git commit<CR>")
 keymap.set("n", "<C-g>s", ":Git status<CR>")
 keymap.set("n", "<C-g>b", ":Git blame<CR>")
 keymap.set("n", "<C-g>p", ":Git push<CR>")
-
+keymap.set("n", "<C-g>ol", ":Git log --oneline<CR>")
+keymap.set("n", "<C-g>l", ":Git log<CR>")
 
 --Harpoon
 --On the plugin by bugs when maps are here
