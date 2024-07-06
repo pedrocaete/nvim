@@ -51,13 +51,14 @@ vim.keymap.set("n", '<leader>dh', '<cmd>Telescope dap commands<cr>')
 vim.keymap.set("n", '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end)
 
 --Git
-keymap.set("n", "<C-g>p", ":Gitsigns preview_hunk<CR>")
+keymap.set("n", "<C-g>ph", ":Gitsigns preview_hunk<CR>")
 keymap.set("n", "<C-g>lb", ":Gitsigns toggle_current_line_blame<CR>")
 keymap.set("n", "<C-g>a", ":Git add %<CR>")
 keymap.set("n", "<C-g><S-a>", ":Git add .<CR>")
 keymap.set("n", "<C-g>c", ":Git commit<CR>")
 keymap.set("n", "<C-g>s", ":Git status<CR>")
 keymap.set("n", "<C-g>b", ":Git blame<CR>")
+keymap.set("n", "<C-g>p", ":Git push<CR>")
 
 
 --Harpoon
