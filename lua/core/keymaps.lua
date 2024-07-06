@@ -2,9 +2,31 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+--Best map to save and exit
+keymap.set("n", "<S-w><S-w>", "<Esc>:w<CR>")
+keymap.set("i", "<C-s>", "<Esc>:w<CR>")
+keymap.set("n", "<S-q><S-q>", "<Esc>:confirm q<CR>")
+--
+--Centralize when move
+keymap.set("n", "j", "jzz")
+keymap.set("n", "k", "kzz")
+keymap.set("n", "G", "Gzz")
+keymap.set("n", "gg", "ggzz")
+keymap.set("n", "n", "nzz")
+keymap.set("n", "N", "Nzz")
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "<C-f>", "<C-f>zz")
+keymap.set("n", "<C-b>", "<C-b>zz")
+keymap.set("n", "{", "{zz")
+keymap.set("n", "}", "}zz")
+keymap.set("n", "H", "Hzz")
+keymap.set("n", "L", "Lzz")
+keymap.set("n", "M", "Mzz")
+
 --Bufferline
 keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
-keymap.set("n", "S-<Tab>", ":BufferLineCycleNext<CR>")
+keymap.set("n", "<S-Tab>", ":BufferLineCycleNext<CR>")
 keymap.set("n", "<leader>x", ":bd!<CR>")
 keymap.set("n", "<Leader>b", ":enew<CR>")
 
@@ -28,8 +50,13 @@ vim.keymap.set("n", '<leader>df', '<cmd>Telescope dap frames<cr>')
 vim.keymap.set("n", '<leader>dh', '<cmd>Telescope dap commands<cr>')
 vim.keymap.set("n", '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end)
 
+--Git
+keymap.set("n", "<C-g>p", ":Gitsigns preview_hunk<CR>")
+keymap.set("n", "<C-g>b", ":Gitsigns toggle_current_line_blame<CR>")
+
 --Harpoon
 --On the plugin by bugs when maps are here
+
 --LSP
 keymap.set('n', '<leader>gg', '<cmd>lua vim.lsp.buf.hover()<CR>')
 keymap.set('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>')

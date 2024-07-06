@@ -1,25 +1,3 @@
---Maps
-local map = vim.keymap.set
-vim.g.mapleader = " "
-vim.keymap.set("n", "<C-s>", function() vim.cmd("w") end, { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>", { noremap = true, silent = true })
-
---Centralize when move
-map("n", "j", "jzz", {})
-map("n", "k", "kzz", {})
-map("n", "G", "Gzz", {})
-map("n", "gg", "ggzz", {})
-map("n", "n", "nzz", {})
-map("n", "N", "Nzz", {})
-map("n", "<C-d>", "<C-d>zz", {})
-map("n", "<C-u>", "<C-u>zz", {})
-map("n", "<C-f>", "<C-f>zz", {})
-map("n", "<C-b>", "<C-b>zz", {})
-map("n", "{", "{zz", {})
-map("n", "}", "}zz", {})
-map("n", "H", "Hzz", {})
-map("n", "L", "Lzz", {})
-map("n", "M", "Mzz", {})
 
 --Remove highlight after a search
 vim.api.nvim_set_keymap("n", "<Esc>", ":nohlsearch<CR>", { noremap = true, silent = true })
