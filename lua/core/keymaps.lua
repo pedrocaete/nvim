@@ -52,7 +52,13 @@ vim.keymap.set("n", '<leader>de', function() require('telescope.builtin').diagno
 
 --Git
 keymap.set("n", "<C-g>p", ":Gitsigns preview_hunk<CR>")
-keymap.set("n", "<C-g>b", ":Gitsigns toggle_current_line_blame<CR>")
+keymap.set("n", "<C-g>lb", ":Gitsigns toggle_current_line_blame<CR>")
+keymap.set("n", "<C-g>a", ":Git add %<CR>")
+keymap.set("n", "<C-g><S-a>", ":Git add .<CR>")
+keymap.set("n", "<C-g>c", ":Git commit<CR>")
+keymap.set("n", "<C-g>s", ":Git status<CR>")
+keymap.set("n", "<C-g>b", ":Git blame<CR>")
+
 
 --Harpoon
 --On the plugin by bugs when maps are here
