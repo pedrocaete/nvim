@@ -35,3 +35,4 @@ vim.opt.undoreload = 10000
 
 --Clipboard of nvim integrated with the system clipboard
 vim.opt.clipboard = "unnamedplus"
+

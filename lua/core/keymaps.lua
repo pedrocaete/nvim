@@ -5,8 +5,9 @@ local keymap = vim.keymap
 --Open keymaps
 keymap.set("n", "<leader>mm", ":edit ~/.config/nvim/lua/core/keymaps.lua<CR>")
 --Best map to save and exit
+keymap.set("n", "<C-w>", "<Esc>:w<CR>")
 keymap.set("n", "<S-w><S-w>", "<Esc>:w<CR>")
-keymap.set("i", "<C-s>", "<Esc>:w<CR>")
+keymap.set("i", "<C-w>", "<Esc>:w<CR>")
 keymap.set("n", "<S-q><S-q>", "<Esc>:confirm q<CR>")
 
 --Centralize when move
