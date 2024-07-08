@@ -21,7 +21,17 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 --Restore Cursor Position
-local autocmd = vim.api.nvim_create_autocmd
+local function restore_cursor()
+  local last_pos = vim.fn.line("'\"")
+  if last_pos > 0 and last_pos <= vim.fn.line("$") then
+    vim.api.nvim_win_set_cursor(0, {last_pos, 0})
+  end
+end
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*",
+  callback = restore_cursor,
+})
 
 --Nordtheme configs
 vim.g.nord_disable_background = true
