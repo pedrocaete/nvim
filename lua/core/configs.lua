@@ -45,3 +45,6 @@ vim.opt.undoreload = 10000
 
 --Clipboard of nvim integrated with the system clipboard
 vim.opt.clipboard = "unnamedplus"
+
+--Thick cursor
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
