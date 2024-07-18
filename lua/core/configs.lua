@@ -48,3 +48,6 @@ vim.opt.clipboard = "unnamedplus"
 
 --Thick cursor
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
+
+--Term guicolors
+vim.opt.termguicolors = true
