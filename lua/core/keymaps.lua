@@ -3,12 +3,25 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 --Open keymaps
-keymap.set("n", "<leader>mm", ":edit ~/.config/nvim/lua/core/keymaps.lua<CR>")
+keymap.set("n", "<leader>km", ":edit ~/.config/nvim/lua/core/keymaps.lua<CR>")
+
+--Open Startify
+keymap.set("n", "<leader>m", ":Startify<CR>")
+
 --Best map to save and exit
-keymap.set("n", "<C-w>", "<Esc>:w<CR>")
-keymap.set("n", "<S-w><S-w>", "<Esc>:w<CR>")
+keymap.set("n", "<C-w>", ":w<CR>")
+keymap.set("n", "<S-w><S-w>", ":w<CR>")
 keymap.set("i", "<C-w>", "<Esc>:w<CR>")
-keymap.set("n", "<S-q><S-q>", "<Esc>:confirm q<CR>")
+keymap.set("n", "<S-q><S-q>", ":confirm q<CR>")
+
+--Pastes in visual mode without yank
+keymap.set("x", "<leader>p", [["_dP]])
+
+--Other way to go to normal mode
+vim.keymap.set("i", "<C-c>", "<Esc>")
+
+--Easy substitons
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --Centralize when move
 keymap.set("n", "j", "jzz")
