@@ -9,9 +9,7 @@ keymap.set("n", "<leader>km", ":edit ~/.config/nvim/lua/core/keymaps.lua<CR>")
 keymap.set("n", "<leader>m", ":Startify<CR>")
 
 --Best map to save and exit
-keymap.set("n", "<C-w>", ":w<CR>")
 keymap.set("n", "<S-w><S-w>", ":w<CR>")
-keymap.set("i", "<C-w>", "<Esc>:w<CR>")
 keymap.set("n", "<S-q><S-q>", ":confirm q<CR>")
 
 --Pastes in visual mode without yank
@@ -98,9 +96,6 @@ keymap.set('n', '<leader>gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 keymap.set('n', '<leader>gn', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 keymap.set('n', '<leader>tr', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
 keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>')
-
---Neo Tree
-keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>')
 
 --Oil
 keymap.set('n', '<leader>o', ':Oil<CR>')
