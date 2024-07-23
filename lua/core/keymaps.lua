@@ -104,3 +104,5 @@ keymap.set('n', '<leader>o', ':Oil<CR>')
 keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
 keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>')
 keymap.set('n', '<leader>fb', ':Telescope buffers<CR>')
+
+keymap.set("n", "<leader>cc", ":Lazy load codeium.nvim<CR>")
