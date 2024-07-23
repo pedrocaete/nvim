@@ -73,23 +73,22 @@ vim.keymap.set("n", '<leader>dh', '<cmd>Telescope dap commands<cr>')
 vim.keymap.set("n", '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end)
 
 --Diffview
-keymap.set("n","<leader>vo", ":DiffviewOpen<CR>")
-keymap.set("n","<leader>vc", ":DiffviewClose<CR>")
+keymap.set("n","<leader>vo", ":DiffviewOpen<CR>",{ noremap = true, silent = true })
+keymap.set("n","<leader>vc", ":DiffviewClose<CR>",{ noremap = true, silent = true })
 
 --Git
-keymap.set("n", "<C-g>ph", ":Gitsigns preview_hunk<CR>")
+keymap.set("n", "<C-g>h", ":Gitsigns preview_hunk<CR>")
 keymap.set("n", "<C-g>lb", ":Gitsigns toggle_current_line_blame<CR>")
-keymap.set("n", "<C-g>a", ":Git add %<CR>")
-keymap.set("n", "<C-g><S-a>", ":Git add .<CR>")
-keymap.set("n", "<C-g>c", ":Git commit<CR>")
-keymap.set("n", "<C-g>s", ":Git status<CR>")
 keymap.set("n", "<C-g>b", ":Git blame<CR>")
-keymap.set("n", "<C-g>p", ":Git push<CR>")
-keymap.set("n", "<C-g>ol", ":Git log --oneline<CR>")
 keymap.set("n", "<C-g>l", ":Git log<CR>")
 
 --Harpoon
 --On the plugin by bugs when maps are here
+
+--LazyGit
+keymap.set("n", "<leader>lg", ":LazyGit<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>ll", ":LazyGitFilter<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>lf", ":LazyGitFilterCurrentFile<CR>", { noremap = true, silent = true })
 
 --LSP
 keymap.set('n', '<leader>gg', '<cmd>lua vim.lsp.buf.hover()<CR>')
