@@ -1,6 +1,7 @@
 return {
     "lervag/vimtex",
     lazy = false,
+    ft = "tex",
     config = function()
         vim.g.vimtex_view_method = "zathura"
         vim.g.vimtex_quickfix_enabled = 1
@@ -13,6 +14,4 @@ return {
         keymap.set("n", "<leader>te", ":VimtexErrors<CR>")
         keymap.set("n", "<leader>tl", ":VimtexLog<CR>")
     end,
-
-    ft = "tex",
 }

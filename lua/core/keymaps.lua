@@ -39,9 +39,9 @@ keymap.set("n", "L", "Lzz")
 keymap.set("n", "M", "Mzz")
 
 --Bufferline
-keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
-keymap.set("n", "<S-Tab>", ":BufferLineCycleNext<CR>")
-keymap.set("n", "<leader>x", ":bd!<CR>")
+keymap.set("n", "<Tab>", ":bnext<CR>")
+keymap.set("n", "<S-Tab>", ":bprev<CR>")
+keymap.set("n", "<leader>q", ":bd!<CR>")
 keymap.set("n", "<Leader>b", ":enew<CR>")
 
 --Dap
@@ -105,4 +105,38 @@ keymap.set('n', '<leader>ff', ':Telescope find_files<CR>')
 keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>')
 keymap.set('n', '<leader>fb', ':Telescope buffers<CR>')
 
+--Trouble
+keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
+  {silent = true, noremap = true}
+)
+keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>",
+  {silent = true, noremap = true}
+)
+keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+  {silent = true, noremap = true}
+)
+keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
+  {silent = true, noremap = true}
+)
+
+--Twilight
+keymap.set("n", "<leader>t", ":Twilight<CR>")
+--ZenMode
+keymap.set('n', '<leader>z', ':ZenMode<CR>')
+
+--[[Surround
+    Add: ys
+    Change: cs
+    Delete ds
+    
+    All of the commands followeds by the surround that will be changed and the new surround (except in the delet case)
+    --]]
+
+-- Load Codeium only when wanted
 keymap.set("n", "<leader>cc", ":Lazy load codeium.nvim<CR>")

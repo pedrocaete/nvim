@@ -48,3 +48,6 @@ vim.opt.clipboard = "unnamedplus"
 
 --Term guicolors
 vim.opt.termguicolors = true
+
+--To Obsidian Plugin Works Properly
+vim.opt_local.conceallevel = 1
