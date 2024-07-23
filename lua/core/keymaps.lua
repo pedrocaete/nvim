@@ -22,7 +22,7 @@ vim.keymap.set("i", "<c-c>", "<esc>", { noremap = true, silent = true })
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --Tabs
-keymap.set("n", "<C-t>", ":tabnew<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>tt", ":tabnew<CR>", { noremap = true, silent = true })
 
 --Centralize when move
 keymap.set("n", "j", "jzz")
