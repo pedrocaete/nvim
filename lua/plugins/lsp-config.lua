@@ -15,11 +15,11 @@ return {
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-    config = function()
-      require("mason-tool-installer").setup({
-        ensure_installed = { "stylua", "shellcheck", "shfmt", "java-debug-adapter", "java-test" },
-      })
-    end,
+		config = function()
+			require("mason-tool-installer").setup({
+				ensure_installed = { "stylua", "shellcheck", "shfmt", "java-debug-adapter", "java-test" },
+			})
+		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -32,6 +32,24 @@ return {
 			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
+			})
+
+			lspconfig.markdown_oxide.setup({
+				capabilities = capabilities, -- again, ensure that capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+				---@diagnostic disable-next-line:unused-local
+				on_attach = function(client, bufnr)
+					-- refresh codelens on TextChanged and InsertLeave as well
+					vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave", "CursorHold", "LspAttach" }, {
+						buffer = bufnr,
+						callback = vim.lsp.codelens.refresh,
+					})
+
+					-- trigger codelens refresh
+					vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
+
+					-- setup conceallevel to enable it in obsidian.nvim
+					vim.opt.conceallevel = 2
+				end,
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
