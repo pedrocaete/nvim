@@ -72,6 +72,10 @@ vim.keymap.set("n", '<leader>df', '<cmd>Telescope dap frames<cr>')
 vim.keymap.set("n", '<leader>dh', '<cmd>Telescope dap commands<cr>')
 vim.keymap.set("n", '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end)
 
+--Diffview
+keymap.set("n","<leader>vo", ":DiffviewOpen<CR>")
+keymap.set("n","<leader>vc", ":DiffviewClose<CR>")
+
 --Git
 keymap.set("n", "<C-g>ph", ":Gitsigns preview_hunk<CR>")
 keymap.set("n", "<C-g>lb", ":Gitsigns toggle_current_line_blame<CR>")
