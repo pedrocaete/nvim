@@ -3,26 +3,26 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 --Open keymaps
-keymap.set("n", "<leader>km", ":edit ~/.config/nvim/lua/core/keymaps.lua<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>km", ":edit ~/.config/nvim/lua/core/keymaps.lua<CR>", {  silent = true })
 
 --Open Startify
-keymap.set("n", "<leader>m", ":Startify<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>m", ":Startify<CR>", {  silent = true })
 
 --Best map to save and exit
 keymap.set("n", "<S-w><S-w>", ":w<CR>")
 keymap.set("n", "<S-q><S-q>", ":confirm q<CR>")
 
 --Pastes in visual mode without yank
-keymap.set("x", "<leader>p", [["_dP]], { noremap = true, silent = true })
+keymap.set("x", "<leader>p", [["_dP]], {  silent = true })
 
 --Other way to go to normal mode
-vim.keymap.set("i", "<c-c>", "<esc>", { noremap = true, silent = true })
+vim.keymap.set("i", "<c-c>", "<esc>", {  silent = true })
 
 --Easy substitons
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --Tabs
-keymap.set("n", "<leader>tt", ":tabnew<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>tt", ":tabnew<CR>", {  silent = true })
 
 --Centralize when move
 keymap.set("n", "j", "jzz")
@@ -42,10 +42,10 @@ keymap.set("n", "L", "Lzz")
 keymap.set("n", "M", "Mzz")
 
 --Buffers
-keymap.set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
-keymap.set("n", "<S-Tab>", ":bprev<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>q", ":bd!<CR>", { noremap = true, silent = true })
-keymap.set("n", "<Leader>b", ":enew<CR>", { noremap = true, silent = true })
+keymap.set("n", "<Tab>", ":bnext<CR>", {  silent = true })
+keymap.set("n", "<S-Tab>", ":bprev<CR>", {  silent = true })
+keymap.set("n", "<leader>q", ":bd!<CR>", {  silent = true })
+keymap.set("n", "<Leader>b", ":enew<CR>", {  silent = true })
 
 --Dap
 vim.keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
@@ -73,8 +73,8 @@ vim.keymap.set("n", '<leader>dh', '<cmd>Telescope dap commands<cr>')
 vim.keymap.set("n", '<leader>de', function() require('telescope.builtin').diagnostics({default_text=":E:"}) end)
 
 --Diffview
-keymap.set("n","<leader>vo", ":DiffviewOpen<CR>",{ noremap = true, silent = true })
-keymap.set("n","<leader>vc", ":DiffviewClose<CR>",{ noremap = true, silent = true })
+keymap.set("n","<leader>vo", ":DiffviewOpen<CR>",{  silent = true })
+keymap.set("n","<leader>vc", ":DiffviewClose<CR>",{  silent = true })
 
 --Git
 keymap.set("n", "<C-g>h", ":Gitsigns preview_hunk<CR>")
@@ -86,9 +86,9 @@ keymap.set("n", "<C-g>l", ":Git log<CR>")
 --On the plugin by bugs when maps are here
 
 --LazyGit
-keymap.set("n", "<leader>lg", ":LazyGit<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>ll", ":LazyGitFilter<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>lf", ":LazyGitFilterCurrentFile<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>lg", ":LazyGit<CR>", {  silent = true })
+keymap.set("n", "<leader>ll", ":LazyGitFilter<CR>", {  silent = true })
+keymap.set("n", "<leader>lf", ":LazyGitFilterCurrentFile<CR>", {  silent = true })
 
 --LSP
 keymap.set('n', '<leader>gg', '<cmd>lua vim.lsp.buf.hover()<CR>')
@@ -109,15 +109,15 @@ keymap.set('n', '<leader>tr', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
 keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>')
 
 --Oil
-keymap.set('n', '<leader>o', ':Oil<CR>', { noremap = true, silent = true })
+keymap.set('n', '<leader>o', ':Oil<CR>', {  silent = true })
 
 --VimPencil
-keymap.set('n', '<leader>tp', ':PencilToggle<CR>', { noremap = true, silent = true })
+keymap.set('n', '<leader>tp', ':PencilToggle<CR>', {  silent = true })
 
 --Telescope
-keymap.set('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
-keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
-keymap.set('n', '<leader>fb', ':Telescope buffers<CR>', { noremap = true, silent = true })
+keymap.set('n', '<leader>ff', ':Telescope find_files<CR>', {  silent = true })
+keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>', {  silent = true })
+keymap.set('n', '<leader>fb', ':Telescope buffers<CR>', {  silent = true })
 
 --Trouble
 keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
@@ -140,10 +140,10 @@ keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
 )
 
 --Twilight
-keymap.set("n", "<leader>tw", ":Twilight<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>tw", ":Twilight<CR>", {  silent = true })
 
 --ZenMode
-keymap.set('n', '<leader>z', ':ZenMode<CR>', { noremap = true, silent = true })
+keymap.set('n', '<leader>z', ':ZenMode<CR>', {  silent = true })
 
 --[[Surround
     Add: ys
