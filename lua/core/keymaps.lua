@@ -111,6 +111,9 @@ keymap.set('i', '<C-Space>', '<cmd>lua vim.lsp.buf.completion()<CR>')
 --Oil
 keymap.set('n', '<leader>o', ':Oil<CR>', { noremap = true, silent = true })
 
+--VimPencil
+keymap.set('n', '<leader>tp', ':PencilToggle<CR>', { noremap = true, silent = true })
+
 --Telescope
 keymap.set('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, silent = true })
 keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>', { noremap = true, silent = true })
@@ -137,7 +140,8 @@ keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
 )
 
 --Twilight
-keymap.set("n", "<leader>t", ":Twilight<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>tw", ":Twilight<CR>", { noremap = true, silent = true })
+
 --ZenMode
 keymap.set('n', '<leader>z', ':ZenMode<CR>', { noremap = true, silent = true })
 
