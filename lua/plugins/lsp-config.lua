@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "pyright", "jdtls", "texlab" },
+				ensure_installed = { "lua_ls", "pyright", "jdtls", "texlab", "intelephense", "markdown_oxide"},
 			})
 		end,
 	},
@@ -17,7 +17,7 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		config = function()
 			require("mason-tool-installer").setup({
-				ensure_installed = { "stylua", "shellcheck", "shfmt", "java-debug-adapter", "java-test" },
+				ensure_installed = { "stylua", "java-debug-adapter", "java-test" },
 			})
 		end,
 	},
@@ -30,9 +30,18 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.pyright.setup({
+			lspconfig.intelephense.setup({
 				capabilities = capabilities,
 			})
+            lspconfig.html.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.sonarlint.setup({
+                capabilities = capabilities,
+            })
+            lspconfig.cssls.setup({
+                capabilities = capabilities,
+            })
 
 			lspconfig.markdown_oxide.setup({
 				capabilities = capabilities, -- again, ensure that capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
