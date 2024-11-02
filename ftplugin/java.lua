@@ -30,6 +30,7 @@ local config = {
 
     -- Eclipse jdtls location
     '-jar', vim.env.HOME .. '/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar',
+    -- TODO Update this to point to the correct jdtls subdirectory for your OS (config_linux, config_mac, config_win, etc)
     '-configuration', vim.env.HOME .. '/.local/share/nvim/mason/packages/jdtls/config_linux',
     '-data', workspace_dir
   },
@@ -42,7 +43,8 @@ local config = {
   -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
   settings = {
     java = {
-      home = '/usr/lib/jvm/java-21-openjdk-amd64/bin/java',
+      -- TODO Replace this with the absolute path to your main java version (JDK 17 or higher)
+      home = '/usr/lib/jvm/java-17-openjdk/bin/java',
       eclipse = {
         downloadSources = true,
       },
@@ -51,6 +53,11 @@ local config = {
         -- TODO Update this by adding any runtimes that you need to support your Java projects and removing any that you don't have installed
         -- The runtime name parameters need to match specific Java execution environments.  See https://github.com/tamago324/nlsp-settings.nvim/blob/2a52e793d4f293c0e1d61ee5794e3ff62bfbbb5d/schemas/_generated/jdtls.json#L317-L334
         runtimes = {
+          {
+            name = "JavaSE-17",
+            path = "/usr/lib/jvm/java-17-openjdk/",
+            default = true,
+          },
         }
       },
       maven = {
