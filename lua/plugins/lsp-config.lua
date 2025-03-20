@@ -42,7 +42,9 @@ return {
 			lspconfig.cssls.setup({
 				capabilities = capabilities,
 			})
-
+			lspconfig.csharp_ls.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.markdown_oxide.setup({
 				capabilities = capabilities, -- again, ensure that capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
 				---@diagnostic disable-next-line:unused-local

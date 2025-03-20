@@ -7,6 +7,7 @@ return {
 			sources = {
 				null_ls.builtins.formatting.stylua,
                 null_ls.builtins.formatting.phpcbf,
+                null_ls.builtins.formatting.csharpier,
 			},
 		})
 
