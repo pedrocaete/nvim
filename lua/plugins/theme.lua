@@ -1,14 +1,8 @@
-return {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
+-- Plugin to colorscheme
+return { 
+  "shaunsingh/nord.nvim",
+  name = "nord",
   config = function()
-    require("tokyonight").setup({
-      transparent = true,
-      on_highlights = function(hl, c)
-        hl.BufferLineFill = { bg = "none" }
-      end,
-    })
-    vim.cmd.colorscheme "tokyonight"
-  end,
+    vim.cmd.colorscheme "nord"
+  end
 }
