@@ -33,9 +33,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     callback = restore_cursor,
 })
 
---Nordtheme configs
-vim.g.nord_disable_background = true
-
 --Undo persists after a file is close
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("data") .. "/undo"

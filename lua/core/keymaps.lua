@@ -155,3 +155,6 @@ keymap.set('n', '<leader>z', ':ZenMode<CR>', {  silent = true })
 
 -- Load Codeium only when wanted
 keymap.set("n", "<leader>cc", ":Lazy load codeium.nvim<CR>")
+
+--Nvim-Tree
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })

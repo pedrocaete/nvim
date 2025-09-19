@@ -14,7 +14,7 @@ return {
                 },
             },
             options = {
-                theme = "nord",
+                theme = "tokyonight",
             },
         })
     end,
