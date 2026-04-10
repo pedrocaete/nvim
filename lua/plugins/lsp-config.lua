@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "pyright", "jdtls", "texlab", "intelephense", "markdown_oxide" },
+				ensure_installed = { "pyright", "jdtls", "texlab", "intelephense", "markdown_oxide" },
 			})
 		end,
 	},
@@ -27,18 +27,35 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
+			--local wp = require("wordpress") -- Carrega o plugin de WP
+			--			lspconfig.lua_ls.setup({
+			--				capabilities = capabilities,
+			--			})
+			--local intele_opts = vim.tbl_deep_extend("force", wp.intelephense, {
+			--	capabilities = capabilities,
+			--})
 			lspconfig.intelephense.setup({
 				capabilities = capabilities,
+			})
+			lspconfig.laravel_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.pest_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.phpactor.setup({
+				-- Outras configs suas...
+				handlers = {
+					-- Isso aqui faz o Neovim jogar no lixo qualquer erro que o Phpactor tentar mostrar
+					["textDocument/publishDiagnostics"] = function() end,
+				},
 			})
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.pyright.setup({
-                capabilities =capabilities;
-            })
+				capabilities = capabilities,
+			})
 			lspconfig.cssls.setup({
 				capabilities = capabilities,
 			})
@@ -61,6 +78,19 @@ return {
 					-- setup conceallevel to enable it in obsidian.nvim
 					vim.opt.conceallevel = 2
 				end,
+			})
+			lspconfig.somesass_ls.setup({
+				capabilities = capabilities,
+				settings = {
+					somesass = {
+						-- Garante que ele valide o código e aponte erros
+						validate = true,
+						-- Configurações de sugestões e caminhos de importação
+						ls = {
+							scanImportPath = true, -- Procura variáveis em arquivos importados
+						},
+					},
+				},
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

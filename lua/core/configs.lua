@@ -51,3 +51,30 @@ vim.opt.termguicolors = true
 
 --To Obsidian Plugin Works Properly
 vim.opt_local.conceallevel = 1
+
+-- Torna o fundo da barra de abas transparente
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = "*",
+  callback = function()
+    vim.cmd("highlight TabLineFill guibg=NONE")
+  end,
+})
+
+-- Compilar SCSS automaticamente ao salvar
+vim.api.nvim_create_autocmd("BufWritePost", {
+    pattern = "*.scss",
+    callback = function()
+        vim.fn.jobstart({
+            "sass",
+            "assets/scss/main.scss",
+            "assets/css/main.css",
+        }, {
+            cwd = vim.fn.getcwd(),
+            on_exit = function(_, code)
+                if code ~= 0 then
+                    vim.notify("Erro ao compilar SCSS", vim.log.levels.ERROR)
+                end
+            end,
+        })
+    end,
+})

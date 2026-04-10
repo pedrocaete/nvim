@@ -158,3 +158,13 @@ keymap.set("n", "<leader>cc", ":Lazy load codeium.nvim<CR>")
 
 --Nvim-Tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
+
+-- Spectre
+keymap.set('n', '<leader>ss', '<cmd>lua require("spectre").toggle()<CR>', {
+    desc = "Toggle Spectre",
+    silent = true
+})
+keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+    desc = "Search current word",
+    silent = true
+})
