@@ -17,7 +17,7 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		config = function()
 			require("mason-tool-installer").setup({
-				ensure_installed = { "stylua", "java-debug-adapter", "java-test" },
+				ensure_installed = { "stylua", "java-debug-adapter", "java-test", "codelldb" },
 			})
 		end,
 	},
@@ -91,6 +91,9 @@ return {
 						},
 					},
 				},
+			})
+			lspconfig.clangd.setup({
+				capabilities = capabilities,
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
